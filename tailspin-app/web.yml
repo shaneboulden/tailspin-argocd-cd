@@ -1,0 +1,77 @@
+---
+kind: Deployment
+apiVersion : apps/v1
+metadata:
+  name: web
+  labels:
+    app: web
+    app.kubernetes.io/component: web
+    app.kubernetes.io/instance: web
+    app.kubernetes.io/name: web
+    app.kubernetes.io/part-of: tailspin
+    app.openshift.io/runtime: dotnet
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+        - name: web
+          image: quay.io/lijcam/space-game-web:latest
+          ports:
+          - containerPort: 5001
+            protocol: TCP
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: web
+  labels:
+    app: web
+    app.kubernetes.io/component: web
+    app.kubernetes.io/instance: web
+    app.kubernetes.io/name: web
+    app.kubernetes.io/part-of: tailspin
+
+spec:
+  type: ClusterIP
+  ports:
+    - port: 5001 
+      targetPort: 5001
+      protocol: TCP
+  selector:
+    app: web
+
+---
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: web
+  labels:
+    app: web
+    app.kubernetes.io/component: web
+    app.kubernetes.io/instance: web
+    app.kubernetes.io/name: web
+    app.kubernetes.io/part-of: tailspin
+    app.openshift.io/runtime: dotnet
+
+spec:
+  port:
+    targetPort: 8080-tcp
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: web
+    weight: 100
+  wildcardPolicy: None
+
+

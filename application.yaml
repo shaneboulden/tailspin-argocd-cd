@@ -1,8 +1,12 @@
+# https://argo-cd.readthedocs.io/en/stable/operator-manual/application.yaml
+
 ---
 apiVersion: v1
 kind: Namespace
 metadata:
   name: tail-spin-production
+  labels:
+    argocd.argoproj.io/managed-by: openshift-gitops
 
 ---
 apiVersion: argoproj.io/v1alpha1
