@@ -1,3 +1,4 @@
+---
 apiVersion : apps/v1
 kind: Deployment
 metadata:
@@ -17,6 +18,7 @@ spec:
           image: quay.io/lijcam/space-game-web:latest
           ports:
           - containerPort: 5001
+
 ---
 apiVersion : apps/v1
 kind: Deployment

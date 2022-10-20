@@ -1,0 +1,21 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: tail-spin-production
+
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: tail-spin-production
+  namespace: openshift-gitops
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/lijcam/tailspin-argocd-cd.git
+    targetRevision: HEAD
+    path: tailspin-app
+  destination:
+    namespace: tail-spin-production
+    server: https://kubernetes.default.svc
