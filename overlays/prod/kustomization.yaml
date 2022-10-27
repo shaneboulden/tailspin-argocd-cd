@@ -7,5 +7,4 @@ patches:
 commonLabels:
         env: prod
 
-namePrefix: prod-
 

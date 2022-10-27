@@ -7,6 +7,5 @@ patches:
 commonLabels:
         env: dev
 
-namePrefix: dev-
 
 
