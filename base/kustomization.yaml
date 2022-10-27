@@ -1,2 +1,3 @@
 resources:
-        - application.yaml
+       - leaderboard.yml
+       - web.yml
