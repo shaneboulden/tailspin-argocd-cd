@@ -1,0 +1,12 @@
+bases:
+        - ../../base
+
+patches:
+        - replica_count.yaml
+
+commonLabels:
+        env: dev
+
+namePrefix: dev-
+
+

@@ -64,7 +64,7 @@ metadata:
 
 spec:
   port:
-    targetPort: 8080-tcp
+    targetPort: 5001
   tls:
     insecureEdgeTerminationPolicy: Redirect
     termination: edge
