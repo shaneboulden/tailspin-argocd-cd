@@ -4,3 +4,11 @@ metadata:
         name: web
 spec:
         replicas: 2
+        template:
+                spec:
+                        containers:
+                                - name: leaderboard
+                                  image: quay.io/rdrysdal/web:v1
+                                  ports:
+                                          - containerPort: 5000
+
