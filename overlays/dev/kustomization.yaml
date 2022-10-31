@@ -2,7 +2,7 @@ bases:
         - ../../base
 
 patches:
-        - replica_count.yaml
+        - dev-overlay.yaml
 
 commonLabels:
         env: dev

@@ -2,7 +2,7 @@ bases:
         - ../../base
 
 patches:
-        - replica_count.yaml
+        - prod-overlay.yaml
 
 commonLabels:
         env: prod
