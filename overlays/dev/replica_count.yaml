@@ -7,7 +7,7 @@ spec:
         template:
                 spec:
                         containers:
-                                - name: leaderboard
+                                - name: web
                                   image: quay.io/rdrysdal/web:v1
                                   ports:
                                           - containerPort: 5000
