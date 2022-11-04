@@ -1,0 +1,25 @@
+# Development application environment
+
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: tail-spin-development
+  labels:
+    argocd.argoproj.io/managed-by: openshift-gitops
+
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: tail-spin-development
+  namespace: openshift-gitops
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/lijcam/tailspin-argocd-cd.git
+    targetRevision: kustomize
+    path: overlays/development
+  destination:
+    namespace: tail-spin-development
+    server: https://kubernetes.default.svc

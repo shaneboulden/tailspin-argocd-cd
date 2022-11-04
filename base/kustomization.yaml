@@ -1,3 +1,4 @@
+---
 resources:
-       - leaderboard.yml
-       - web.yml
+  - leaderboard-microservice.yaml
+  - web-microservice.yaml
