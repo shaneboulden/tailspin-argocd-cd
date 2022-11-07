@@ -16,6 +16,10 @@ metadata:
   namespace: openshift-gitops
 spec:
   project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
   source:
     repoURL: https://github.com/lijcam/tailspin-argocd-cd.git
     targetRevision: HEAD
@@ -23,7 +27,3 @@ spec:
   destination:
     namespace: tail-spin-development
     server: https://kubernetes.default.svc
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
