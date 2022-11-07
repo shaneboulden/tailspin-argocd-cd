@@ -21,7 +21,7 @@ spec:
       prune: true
       selfHeal: true
   source:
-    repoURL: https://github.com/lijcam/tailspin-argocd-cd.git
+    repoURL: https://rism.visualstudio.com/ARO%20Demo/_git/tailspin-argocd-cd
     targetRevision: main
     path: overlays/development
   destination:
