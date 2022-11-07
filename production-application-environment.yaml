@@ -23,3 +23,7 @@ spec:
   destination:
     namespace: tail-spin-production
     server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
