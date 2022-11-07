@@ -16,6 +16,10 @@ metadata:
   namespace: openshift-gitops
 spec:
   project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
   source:
     repoURL: https://github.com/lijcam/tailspin-argocd-cd.git
     targetRevision: main
