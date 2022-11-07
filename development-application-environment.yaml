@@ -1,10 +1,10 @@
-# https://argo-cd.readthedocs.io/en/stable/operator-manual/application.yaml
+# Development application environment
 
 ---
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: tail-spin-production
+  name: tail-spin-development
   labels:
     argocd.argoproj.io/managed-by: openshift-gitops
 
@@ -12,14 +12,18 @@ metadata:
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: tail-spin-production
+  name: tail-spin-development
   namespace: openshift-gitops
 spec:
   project: default
   source:
     repoURL: https://github.com/lijcam/tailspin-argocd-cd.git
     targetRevision: HEAD
-    path: tailspin-app
+    path: overlays/development
   destination:
-    namespace: tail-spin-production
+    namespace: tail-spin-development
     server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

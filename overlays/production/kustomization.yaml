@@ -1,0 +1,9 @@
+---
+bases:
+  - ../../base
+
+patches:
+  - production-overlay.yaml
+
+commonLabels:
+  env: production

@@ -1,0 +1,16 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web
+
+spec:
+  replicas: 2
+  template:
+    spec:
+      containers:
+        - name: web
+          image: quay.io/lijcam/space-game-web:latest
+          ports:
+          - containerPort: 5001
+            protocol: TCP
