@@ -18,7 +18,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/lijcam/tailspin-argocd-cd.git
-    targetRevision: kustomize
+    targetRevision: main
     path: overlays/development
   destination:
     namespace: tail-spin-development
