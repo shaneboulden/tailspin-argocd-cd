@@ -28,4 +28,4 @@ oc delete namespace/tail-spin-development
 ```
 
 ## Dependencies
-OpenShift-gitOps must be installed in the cluster.
+OpenShift-gitOps must be installed in the cluster. A manifest has been provided in [Docs/OpenShift](doc/OpenShift).
