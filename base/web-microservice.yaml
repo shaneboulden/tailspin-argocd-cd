@@ -25,7 +25,7 @@ spec:
     spec:
       containers:
         - name: web
-          image: quay.io/lijcam/space-game-web:latest
+          image: demotime.azurecr.io/space-game-web:330
           ports:
           - containerPort: 5001
             protocol: TCP
