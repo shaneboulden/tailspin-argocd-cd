@@ -27,7 +27,7 @@ spec:
         - name: web
           image: demotime.azurecr.io/space-game-web:330
           ports:
-          - containerPort: 5001
+          - containerPort: 8080
             protocol: TCP
 
 ---
@@ -45,8 +45,8 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-    - port: 5001 
-      targetPort: 5001
+    - port: 8080 
+      targetPort: 8080
       protocol: TCP
   selector:
     app: web
@@ -66,7 +66,7 @@ metadata:
 
 spec:
   port:
-    targetPort: 5001
+    targetPort: 8080
   tls:
     insecureEdgeTerminationPolicy: Redirect
     termination: edge
