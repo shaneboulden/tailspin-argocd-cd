@@ -22,7 +22,7 @@ spec:
       selfHeal: true
   source:
     repoURL: https://rism.visualstudio.com/ARO%20Demo/_git/tailspin-argocd-cd
-    targetRevision: v1.1
+    targetRevision: v2
     path: overlays/production
   destination:
     namespace: tail-spin-production
