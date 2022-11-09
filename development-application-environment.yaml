@@ -16,10 +16,6 @@ metadata:
   namespace: openshift-gitops
 spec:
   project: default
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
   source:
     repoURL: https://rism.visualstudio.com/ARO%20Demo/_git/tailspin-argocd-cd
     targetRevision: main
