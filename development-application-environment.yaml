@@ -17,7 +17,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://rism.visualstudio.com/ARO%20Demo/_git/tailspin-argocd-cd
+    repoURL: https://github.com/lijcam/tailspin-argocd-cd.git
     targetRevision: main
     path: overlays/development
   destination:

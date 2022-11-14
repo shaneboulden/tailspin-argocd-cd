@@ -21,8 +21,8 @@ spec:
       prune: true
       selfHeal: true
   source:
-    repoURL: https://rism.visualstudio.com/ARO%20Demo/_git/tailspin-argocd-cd
-    targetRevision: v3
+    repoURL: https://github.com/lijcam/tailspin-argocd-cd.git
+    targetRevision: v4
     path: overlays/production
   destination:
     namespace: tail-spin-production

@@ -25,7 +25,7 @@ spec:
     spec:
       containers:
         - name: leaderboard
-          image: demotime.azurecr.io/space-game-leaderboard:330
+          image: quay.io/lijcam/space-game-leaderboard:326
           ports:
           - containerPort: 8080
 
