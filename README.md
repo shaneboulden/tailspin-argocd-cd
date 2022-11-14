@@ -17,6 +17,8 @@ oc apply -f development-application-environment.yaml
 oc apply -f production-application-environment.yaml
 ```
 
+OpenShift-gitOps must be installed in the cluster. A manifest has been provided in [Doc/OpenShift](doc/OpenShift).
+
 ## Uninstallation
 To remove either environment from an OpenShift cluster, first remove the `Application` spec, followed by the `Namespace`.
 
@@ -26,6 +28,3 @@ To remove either environment from an OpenShift cluster, first remove the `Applic
 oc delete application/tail-spin-development
 oc delete namespace/tail-spin-development
 ```
-
-## Dependencies
-OpenShift-gitOps must be installed in the cluster. A manifest has been provided in [Docs/OpenShift](doc/OpenShift).
