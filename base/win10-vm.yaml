@@ -19,11 +19,9 @@ spec:
   instancetype:
     kind: virtualmachineclusterinstancetype
     name: u1.large
-    revisionName: windows-10-virtio-tailspin-97-u1.large-e92dab12-5f92-4d3b-877c-43e74a5ea381-1
   preference:
     kind: virtualmachineclusterpreference
     name: windows.10.virtio
-    revisionName: windows-10-virtio-tailspin-97-windows.10.virtio-1682deb9-d3bf-463d-8412-907d546113ae-1
   running: true
   template:
     metadata:
