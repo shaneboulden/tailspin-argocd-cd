@@ -1,0 +1,84 @@
+---
+apiVersion: kubevirt.io/v1
+kind: VirtualMachine
+metadata:
+  name: windows-10-virtio-tailspin-97
+  finalizers:
+    - kubevirt.io/virtualMachineControllerFinalize
+spec:
+  dataVolumeTemplates:
+    - metadata:
+        name: windows-10-virtio-tailspin
+      spec:
+        sourceRef:
+          kind: DataSource
+          name: win10-nvidia-rdp
+          namespace: vms
+        storage:
+          resources: {}
+  instancetype:
+    kind: virtualmachineclusterinstancetype
+    name: u1.large
+    revisionName: windows-10-virtio-tailspin-97-u1.large-e92dab12-5f92-4d3b-877c-43e74a5ea381-1
+  preference:
+    kind: virtualmachineclusterpreference
+    name: windows.10.virtio
+    revisionName: windows-10-virtio-tailspin-97-windows.10.virtio-1682deb9-d3bf-463d-8412-907d546113ae-1
+  running: true
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        network.kubevirt.io/headlessService: headless
+    spec:
+      architecture: amd64
+      domain:
+        devices:
+          gpus:
+            - deviceName: nvidia.com/GP107GL_QUADRO_P620
+              name: gpus-jade-opossum-73
+        machine:
+          type: pc-q35-rhel9.4.0
+        resources: {}
+      subdomain: headless
+      volumes:
+        - dataVolume:
+            name: windows-10-virtio-tailspin-97-volume
+          name: rootdisk
+status: {}
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: nodeport
+spec:
+  externalTrafficPolicy: Cluster
+  ports:
+    - name: nodeport
+      protocol: TCP
+      port: 3389
+      targetPort: 3389
+      nodePort: 31368
+  internalTrafficPolicy: Cluster
+  type: NodePort
+  selector:
+    kubevirt.io/nodeName: lab8.blueradish.net
+status: {}
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: headless
+spec:
+  ports:
+    - name: headless
+      protocol: TCP
+      port: 5434
+      targetPort: 5434
+  type: ClusterIP
+  selector:
+    network.kubevirt.io/headlessService: headless
+status: {}
+
