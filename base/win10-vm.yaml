@@ -2,13 +2,13 @@
 apiVersion: kubevirt.io/v1
 kind: VirtualMachine
 metadata:
-  name: windows-10-virtio-tailspin-97
+  name: windows-10-virtio-tailspin
   finalizers:
     - kubevirt.io/virtualMachineControllerFinalize
 spec:
   dataVolumeTemplates:
     - metadata:
-        name: windows-10-virtio-tailspin
+        name: windows-10-virtio-tailspin-volume
       spec:
         sourceRef:
           kind: DataSource
@@ -25,7 +25,6 @@ spec:
   running: true
   template:
     metadata:
-      creationTimestamp: null
       labels:
         network.kubevirt.io/headlessService: headless
     spec:
@@ -34,14 +33,14 @@ spec:
         devices:
           gpus:
             - deviceName: nvidia.com/GP107GL_QUADRO_P620
-              name: gpus-jade-opossum-73
+              name: gpu1
         machine:
           type: pc-q35-rhel9.4.0
         resources: {}
       subdomain: headless
       volumes:
         - dataVolume:
-            name: windows-10-virtio-tailspin-97-volume
+            name: windows-10-virtio-tailspin-volume
           name: rootdisk
 status: {}
 
