@@ -1,12 +1,6 @@
 ---
-bases:
+resources:
   - ../../base
-
-patches:
- - development-overlay.yaml
 
 commonLabels:
   env: development
-
-
-
