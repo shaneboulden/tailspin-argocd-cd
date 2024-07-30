@@ -18,6 +18,7 @@ status:
   loadBalancer: {}
 ---
 apiVersion: route.openshift.io/v1
+kind: Route
 metadata:
   name: sunshine
 spec:
