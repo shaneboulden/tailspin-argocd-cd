@@ -3,3 +3,4 @@ resources:
   - leaderboard-microservice.yaml
   - web-microservice.yaml
   - win10-vm.yaml
+  - sunshine-svc.yaml
