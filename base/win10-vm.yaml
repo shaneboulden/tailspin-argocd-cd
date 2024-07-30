@@ -12,7 +12,7 @@ spec:
       spec:
         sourceRef:
           kind: DataSource
-          name: win10-nvidia-rdp
+          name: win10-sunshine
           namespace: vms
         storage:
           resources: {}
