@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: win10-sunshine
+spec:
+  ports:
+  - name: sunshine
+    port: 47990
+    protocol: TCP
+    targetPort: 47990
+  selector:
+    vm.kubevirt.io/name: windows-10-virtio-tailspin
+  type: ClusterIP
+status:
+  loadBalancer: {}
