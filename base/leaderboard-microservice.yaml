@@ -1,5 +1,4 @@
 # Leaderboard microservice components.
-
 ---
 apiVersion : apps/v1
 kind: Deployment
@@ -28,7 +27,14 @@ spec:
           image: quay.io/lijcam/space-game-leaderboard:326
           ports:
           - containerPort: 8080
-
+        - name: ubi
+          image: registry.redhat.io/ubi9/ubi:latest
+          command: 
+          - "/bin/bash"
+          - "-c"
+          - "--"
+          args: 
+          - "while true; do sleep 30; done;"
 ---
 apiVersion: v1
 kind: Service
